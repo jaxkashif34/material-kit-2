@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
+// import { ThemeProvider } from "@mui/material/Icon";
+import theme from "assets/theme";
+import {
+  Button,
+  Tooltip,
+  LinearProgress,
+  IconButton,
+  Icon,
+} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Icon fontSize="small">
+        <DeleteIcon />
+      </Icon>
+    </ThemeProvider>
   );
 }
-
-export default App;
