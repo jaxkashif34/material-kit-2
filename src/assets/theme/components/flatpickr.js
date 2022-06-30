@@ -1,9 +1,11 @@
-import colors from "../base/colors";
-import { rgba } from "../functions";
+import colors from "assets/theme/base/colors";
+
+// Material Kit 2 React helper functions
+import rgba from "assets/theme/functions/rgba";
 
 const { info, white, gradients } = colors;
 
-const flatPicker = {
+export default {
   ".flatpickr-day:hover, .flatpickr-day:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.nextMonthDay:focus":
     {
       background: rgba(info.main, 0.28),
@@ -33,5 +35,3 @@ const flatPicker = {
       fill: `${info.main} !important`,
     },
 };
-
-export default flatPicker;

@@ -1,8 +1,13 @@
-import colors from "../base/colors";
-import { pxToRem } from "assets/theme/functions/index";
+import colors from "assets/theme/base/colors";
+
+// Material Kit 2 React Helper Functions
+import pxToRem from "assets/theme/functions/pxToRem";
+
 const { grey } = colors;
-const borders = {
+
+export default {
   borderColor: grey[300],
+
   borderWidth: {
     0: 0,
     1: pxToRem(1),
@@ -11,6 +16,7 @@ const borders = {
     4: pxToRem(4),
     5: pxToRem(5),
   },
+
   borderRadius: {
     xs: pxToRem(1.6),
     sm: pxToRem(2),
@@ -21,5 +27,3 @@ const borders = {
     section: pxToRem(160),
   },
 };
-
-export default borders;

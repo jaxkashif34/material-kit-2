@@ -1,11 +1,13 @@
-import borders from "../base/borders";
-import colors from "../base/colors";
-import { pxToRem } from "../functions";
+import borders from "assets/theme/base/borders";
+import colors from "assets/theme/base/colors";
 
-const { light } = colors;
+// Material Kit 2 React helper functions
+import pxToRem from "assets/theme/functions/pxToRem";
+
 const { borderRadius } = borders;
+const { light } = colors;
 
-const linearProgress = {
+export default {
   styleOverrides: {
     root: {
       height: pxToRem(6),
@@ -13,19 +15,21 @@ const linearProgress = {
       overflow: "visible",
       position: "relative",
     },
+
     colorPrimary: {
-      background: light.main,
+      backgroundColor: light.main,
     },
+
     colorSecondary: {
-      background: light.main,
+      backgroundColor: light.main,
     },
+
     bar: {
       height: pxToRem(6),
       borderRadius: borderRadius.sm,
       position: "absolute",
-      transform: "translate(0, 0) !important",
+      transform: `translate(0, 0) !important`,
       transition: "width 0.6s ease !important",
     },
   },
 };
-export default linearProgress;

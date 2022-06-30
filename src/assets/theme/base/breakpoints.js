@@ -1,4 +1,4 @@
-const breakpoints = {
+export default {
   values: {
     xs: 0,
     sm: 576,
@@ -8,4 +8,3 @@ const breakpoints = {
     xxl: 1400,
   },
 };
-export default breakpoints;

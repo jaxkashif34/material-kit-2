@@ -1,40 +1,39 @@
 import React from "react";
-import { ThemeProvider } from "@mui/material/styles";
-// import { ThemeProvider } from "@mui/material/Icon";
-import theme from "assets/theme";
-import { Box, Tabs, Tab, Typography } from "@mui/material";
-
-function TabPanel(props) {
-  const { index, children } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-    >
-      <Box sx={{ p: 3 }}>
-        <Typography>{children}</Typography>
-      </Box>
-    </div>
-  );
-}
-
+import ThemeConfig from "assets/theme";
+import {
+  Dialog,
+  DialogActions,
+  DialogTitle,
+  Button,
+  DialogContent,
+  DialogContentText,
+} from "@mui/material";
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Box sx={{ width: "100%" }}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs  aria-label="basic tabs example">
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
-          </Tabs>
-        </Box>
-        <TabPanel index={0}>Item One</TabPanel>
-        <TabPanel index={1}>Item Two</TabPanel>
-        <TabPanel index={2}>Item Three</TabPanel>
-      </Box>
-    </ThemeProvider>
+    <ThemeConfig>
+      <Button onClick={handleClickOpen}>Open alert dialog</Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Let Google help apps determine location. This means sending
+            anonymous location data to Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose} autoFocus>
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </ThemeConfig>
   );
 }

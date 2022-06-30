@@ -19,13 +19,14 @@ import borders from "assets/theme/base/borders";
 import boxShadows from "assets/theme/base/boxShadows";
 
 // Material Kit 2 React helper functions
-import { pxToRem, linearGradient } from "assets/theme/functions";
+import pxToRem from "assets/theme/functions/pxToRem";
+import linearGradient from "assets/theme/functions/linearGradient";
 
 const { transparent, gradients } = colors;
 const { borderRadius } = borders;
 const { colored } = boxShadows;
 
-export const stepper = {
+export default {
   styleOverrides: {
     root: {
       background: linearGradient(gradients.info.main, gradients.info.state),
@@ -39,8 +40,3 @@ export const stepper = {
     },
   },
 };
-
-export { default as stepLabel } from "./stepLabel";
-export { default as stepIcon } from "./stepIcon";
-export { default as stepConnector } from "./stepConnector";
-export { default as step } from "./step";

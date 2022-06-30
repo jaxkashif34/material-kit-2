@@ -1,11 +1,11 @@
-import colors from "./colors";
+import colors from "assets/theme/base/colors";
 
 // Material Kit 2 React Helper Functions
-import boxShadow from "../functions/boxShadow";
+import boxShadow from "assets/theme/functions/boxShadow";
 
 const { black, white, tabs, coloredShadows } = colors;
 
-const boxShadows = {
+export default {
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),
   sm: boxShadow([0, 5], [10, 0], black.main, 0.12),
   md: `${boxShadow([0, 4], [6, -1], black.main, 0.1)}, ${boxShadow(
@@ -92,4 +92,3 @@ const boxShadows = {
     indicator: boxShadow([0, 1], [5, 1], tabs.indicator.boxShadow, 1),
   },
 };
-export default boxShadows;

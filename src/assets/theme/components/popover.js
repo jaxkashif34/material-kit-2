@@ -1,12 +1,12 @@
-import colors from "../base/colors";
-import borders from "../base/borders";
-import boxShadows from "../base/boxShadows";
+import colors from "assets/theme/base/colors";
+import boxShadows from "assets/theme/base/boxShadows";
+import borders from "assets/theme/base/borders";
 
 const { transparent } = colors;
 const { lg } = boxShadows;
 const { borderRadius } = borders;
 
-const popover = {
+export default {
   styleOverrides: {
     paper: {
       backgroundColor: transparent.main,
@@ -15,4 +15,3 @@ const popover = {
     },
   },
 };
-export default popover;

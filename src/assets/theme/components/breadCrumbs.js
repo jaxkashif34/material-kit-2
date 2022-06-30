@@ -1,19 +1,18 @@
-import colors from "../base/colors";
-import typography from "../base/typography";
+import colors from "assets/theme/base/colors";
+import typography from "assets/theme/base/typography";
 
 const { grey } = colors;
 const { size } = typography;
 
-const breadCrumbs = {
+export default {
   styleOverrides: {
     li: {
       lineHeight: 0,
     },
+
     separator: {
       fontSize: size.sm,
       color: grey[600],
     },
   },
 };
-
-export default breadCrumbs;

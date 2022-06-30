@@ -1,7 +1,6 @@
-const link = {
+export default {
   defaultProps: {
     underline: "none",
     color: "inherit",
   },
 };
-export default link;

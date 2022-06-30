@@ -1,9 +1,12 @@
-import colors from "../base/colors";
-import { rgba, pxToRem } from "../functions";
+import colors from "assets/theme/base/colors";
+
+// Material Kit 2 React helper functions
+import rgba from "assets/theme/functions/rgba";
+import pxToRem from "assets/theme/functions/pxToRem";
 
 const { dark, white } = colors;
 
-const divider = {
+export default {
   styleOverrides: {
     root: {
       background: rgba(dark.main, 0.2),
@@ -12,6 +15,7 @@ const divider = {
       borderBottom: "none",
       opacity: 0.25,
     },
+
     vertical: {
       background: rgba(dark.main, 0.2),
       width: pxToRem(1),
@@ -19,12 +23,13 @@ const divider = {
       margin: `0 ${pxToRem(16)}`,
       borderRight: "none",
     },
+
     light: {
       background: rgba(white.main, 0.2),
+
       "&.MuiDivider-vertical": {
-        background: rgba(dark.main, 0.2),
+        background: rgba(white.main, 0.2),
       },
     },
   },
 };
-export default divider;
