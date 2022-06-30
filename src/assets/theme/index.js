@@ -19,7 +19,25 @@ import {
   iconButton,
   icon,
   flatPicker,
+  divider,
+  container,
+  buttonBase,
+  breadCrumbs,
+  avatar,
+  appBar,
 } from "./components";
+import { tabs, tab } from "./components/tabs";
+import { tableContainer, tableHead, tablecell } from "./components/table";
+import {
+  stepLabel,
+  step,
+  stepConnector,
+  stepIcon,
+  stepper,
+} from "./components/stepper";
+import { menu, menuItem } from "./components/menu";
+import { list, listItem, listItemText } from "./components/list";
+
 export default createTheme({
   breakpoints: { ...breakpoints },
   palette: { ...colors },
@@ -49,5 +67,26 @@ export default createTheme({
     MuiLinearProgress: { ...linearProgress },
     MuiIconButton: { ...iconButton },
     MuiIcon: { ...icon },
+    MuiDivider: { ...divider },
+    MuiContainer: { ...container },
+    MuiButtonBase: { ...buttonBase },
+    MuiBreadcrumbs: { ...breadCrumbs },
+    MuiAvatar: { ...avatar },
+    MuiAppBar: { ...appBar },
+    MuiTabs: { ...tabs },
+    MuiTab: { ...tab },
+    MuiTableContainer: { ...tableContainer },
+    MuiTableCell: { ...tablecell },
+    MuiTableHead: { ...tableHead },
+    MuiStep: { ...step },
+    MuiStepLabel: { ...stepLabel },
+    MuiStepConnector: { ...stepConnector },
+    MuiStepIcon: { ...stepIcon },
+    MuiStepper: { ...stepper },
+    MuiMenu: { ...menu },
+    MuiMenuItem: { ...menuItem },
+    MuiListItem: { ...listItem },
+    MuiListItemText: { ...listItemText },
+    MuiList: { ...list },
   },
 });
