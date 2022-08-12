@@ -3,7 +3,7 @@ import borders from '../../base/borders';
 import colors from '../../base/colors';
 
 // import pxToRem and linearGradient
-import { pxToRem, LinearGradient } from '../../functions';
+import { pxToRem, linearGradient } from '../../functions';
 
 // destructure the borderWidth and borderColor
 const { borderWidth, borderColor } = borders;
@@ -28,7 +28,7 @@ export default {
         width: pxToRem(14),
         height: pxToRem(14),
         borderRadius: '50%',
-        backgroundImage: LinearGradient(info.main, info.main),
+        backgroundImage: linearGradient(info.main, info.main),
         opacity: 0,
         left: 0,
         right: 0,

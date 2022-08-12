@@ -23,6 +23,16 @@ import {
   checkBox,
   radio,
   autoComplete,
+  divider,
+  tableContainer,
+  tableHead,
+  tableCell,
+  linearProgress,
+  breadCrumbs,
+  slider,
+  avatar,
+  tooltip,
+  appBar,
 } from './components';
 export const themeObj = createTheme({
   palette: colors,
@@ -71,5 +81,23 @@ export const themeObj = createTheme({
     MuiCheckbox: checkBox,
     MuiRadio: radio,
     MuiAutocomplete: autoComplete,
+    // divider
+    MuiDivider: divider,
+    // table
+    MuiTableContainer: tableContainer,
+    MuiTableHead: tableHead,
+    MuiTableCell: tableCell,
+    // linearProgress
+    MuiLinearProgress: linearProgress,
+    // breadCrumbs
+    MuiBreadcrumbs: breadCrumbs,
+    // slider
+    MuiSlider: slider,
+    // avatar
+    MuiAvatar: avatar,
+    // tooltip
+    MuiTooltip: tooltip,
+    // appBar (NavBar)
+    MuiAppBar:appBar
   },
 });
