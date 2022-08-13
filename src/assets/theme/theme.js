@@ -33,6 +33,23 @@ import {
   avatar,
   tooltip,
   appBar,
+  tabs,
+  tab,
+  stepper,
+  step,
+  stepConnector,
+  stepLabel,
+  stepIcon,
+  popover,
+  icon,
+  link,
+  dialog,
+  dialogAction,
+  dialogContent,
+  dialogContentText,
+  dialogTitle,
+  menu,
+  menuItem,
 } from './components';
 export const themeObj = createTheme({
   palette: colors,
@@ -98,6 +115,30 @@ export const themeObj = createTheme({
     // tooltip
     MuiTooltip: tooltip,
     // appBar (NavBar)
-    MuiAppBar:appBar
+    MuiAppBar: appBar,
+    // tabs
+    MuiTabs: tabs,
+    MuiTab: tab,
+    // stepper
+    MuiStepper: stepper,
+    MuiStep: step,
+    MuiStepConnector: stepConnector,
+    MuiStepLabel: stepLabel,
+    MuiStepIcon: stepIcon,
+    // popover
+    MuiPopover: popover,
+    // icon
+    MuiIcon: icon,
+    // link
+    MuiLink: link,
+    // dialogs
+    MuiDialog: dialog,
+    MuiDialogTitle: dialogTitle,
+    MuiDialogContent: dialogContent,
+    MuiDialogContentText: dialogContentText,
+    MuiDialogActions: dialogAction,
+    // menu
+    MuiMenu: menu,
+    MuiMenuItem: menuItem,
   },
 });
