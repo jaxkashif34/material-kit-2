@@ -2,7 +2,7 @@ import { pxToRem } from '../functions';
 
 export default {
   defaultProps: {
-    baseClassName: 'materi-icons-round',
+    baseClassName: 'material-icons-round',
     fontSize: 'inherit',
   },
 

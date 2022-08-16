@@ -1,7 +1,7 @@
 import borders from '../../base/borders';
 import { pxToRem } from '../../functions';
 
-const { borderRadius } = borders;
+const { borderRadius } = borders();
 
 export default {
   styleOverrides: {

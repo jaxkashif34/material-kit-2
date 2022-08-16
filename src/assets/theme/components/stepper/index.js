@@ -1,22 +1,16 @@
 import colors from '../../base/colors';
-import borders from '../../base/borders';
-import boxShadows from '../../base/boxShadows';
 
-import { pxToRem, linearGradient } from '../../functions';
+import { pxToRem } from '../../functions';
 
-const { transparent, gradients } = colors;
-const { borderRadius } = borders;
-const { colored } = boxShadows;
+const { transparent } = colors();
 
 export default {
   styleOverrides: {
     root: {
-      background: linearGradient(gradients.info.main, gradients.info.state),
-      padding: `${pxToRem(24)} 0 ${pxToRem(16)}`,
-      borderRadius: borderRadius.lg,
-      boxShadow: colored.info,
+      margin: `${pxToRem(48)} 0`,
+      padding: `0 ${pxToRem(12)}`,
 
-      '&.MuiPaper-root': {
+      "&.MuiPaper-root": {
         backgroundColor: transparent.main,
       },
     },

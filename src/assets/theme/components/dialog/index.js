@@ -1,8 +1,8 @@
 import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
 
-const { borderRadius } = borders;
-const { xxl } = boxShadows;
+const { borderRadius } = borders();
+const { xxl } = boxShadows();
 
 export default {
   styleOverrides: {

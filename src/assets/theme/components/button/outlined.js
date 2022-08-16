@@ -1,20 +1,27 @@
 import colors from '../../base/colors';
 import typography from '../../base/typography';
+import boxShadows from '../../base/boxShadows';
 import { pxToRem } from '../../functions';
-const { transparent, light, info, secondary } = colors;
+const { transparent, light, info, secondary } = colors();
 
 const { size } = typography;
+
+const { buttonBoxShadow } = boxShadows();
 
 export default {
   base: {
     minHeight: pxToRem(40),
     color: light.main,
     borderColor: light.main,
-    padding: `${pxToRem(10)} ${pxToRem(24)}`,
+    padding: `${pxToRem(10)} ${pxToRem(20)}`,
 
     '&:hover': {
       backgroundColor: transparent.main,
       opacity: 0.75,
+    },
+
+    '&:focus:not(:hover)': {
+      boxShadow: buttonBoxShadow.stateOfNotHover,
     },
 
     '& .material-icons, .material-icons-round, svg': {
@@ -23,17 +30,18 @@ export default {
   },
 
   small: {
-    minHeight: pxToRem(32),
-    padding: `${pxToRem(6)} ${pxToRem(16)}`,
+    minHeight: pxToRem(34),
+    padding: `${pxToRem(8)} ${pxToRem(32)}`,
     fontSize: size.xs,
+
     '& .material-icons, .material-icons-round, svg': {
       fontSize: `${pxToRem(12)} !important`,
     },
   },
 
   large: {
-    minHeight: pxToRem(47),
-    padding: `${pxToRem(12)} ${pxToRem(28)}`,
+    minHeight: pxToRem(49),
+    padding: `${pxToRem(14)} ${pxToRem(64)}`,
     fontSize: size.sm,
 
     '& .material-icons, .material-icons-round, svg': {
@@ -48,6 +56,10 @@ export default {
     '&:hover': {
       backgroundColor: transparent.main,
     },
+
+    '&:focus:not(:hover)': {
+      boxShadow: buttonBoxShadow.stateOfNotHover,
+    },
   },
 
   secondary: {
@@ -56,6 +68,10 @@ export default {
 
     '&:hover': {
       backgroundColor: transparent.main,
+    },
+
+    '&:focus:not(:hover)': {
+      boxShadow: buttonBoxShadow.stateOfNotHover,
     },
   },
 };

@@ -4,31 +4,39 @@ import colors from '../base/colors';
 // import rgba and pxToRem
 import { rgba, pxToRem } from '../functions';
 
-const { dark, white } = colors;
+const { dark, white, transparent } = colors();
 
-export default {
+const divider = (isDark) => ({
   styleOverrides: {
     root: {
-      background: rgba(dark.main, 0.2),
+      backgroundColor: transparent.main,
+      backgroundImage: `linear-gradient(to right, ${rgba(isDark ? white.main : dark.main, 0)}, ${rgba(isDark ? white.main : dark.main, 0.4)}, ${rgba(isDark ? white.main : dark.main, 0)}) !important`,
       height: pxToRem(1),
       margin: `${pxToRem(16)} 0`,
-      borderBottom: 'none',
+      borderBottom: 0,
+      borderLeft: 0,
+      borderRight: 0,
       opacity: 0.25,
     },
 
     vertical: {
-      background: rgba(dark.main, 0.2),
+      backgroundColor: transparent.main,
+      backgroundImage: `linear-gradient(180deg, ${rgba(isDark ? white.main : dark.main, 0)}, ${rgba(isDark ? white.main : dark.main, 0.4)}, ${rgba(isDark ? white.main : dark.main, 0)}) !important`,
       width: pxToRem(1),
       height: '100%',
       margin: `0 ${pxToRem(16)}`,
-      borderRight: 'none',
+      borderRight: 'unset',
     },
+
     light: {
-      background: rgba(white.main, 0.2),
+      backgroundColor: transparent.main,
+      backgroundImage: `linear-gradient(to right, ${rgba(dark.main, 0)}, ${dark.main}, ${rgba(dark.main, 0)}) !important`,
 
       '&.MuiDivider-vertical': {
-        background: rgba(white.main, 0.2),
+        backgroundImage: `linear-gradient(180deg, ${rgba(dark.main, 0)}, ${dark.main}, ${rgba(dark.main, 0)}) !important`,
       },
     },
   },
-};
+});
+
+export default divider;

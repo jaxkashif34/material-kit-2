@@ -4,12 +4,12 @@ import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
 
 // import pxToRem and linearGradient
-import { pxToRem, linearGradient } from '../../functions';
+import { pxToRem, linearGradient, rgba } from '../../functions';
 
 // destructure white, gradients, grey and transparent borderWidth and md
-const { white, gradients, grey, transparent } = colors;
-const { borderWidth } = borders;
-const { md } = boxShadows;
+const { white, gradients, light } = colors();
+const { borderWidth } = borders();
+const { md } = boxShadows();
 
 export default {
   defaultProps: {
@@ -17,52 +17,56 @@ export default {
   },
 
   styleOverrides: {
+    root: {
+      width: pxToRem(40),
+      height: pxToRem(20),
+      margin: `${pxToRem(4)} 0`,
+      padding: 0,
+      borderRadius: pxToRem(160),
+      transition: "transform 250ms ease-in",
+    },
+
     switchBase: {
-      color: gradients.dark.main,
+      padding: 0,
+      top: "50%",
+      transform: `translate(${pxToRem(2)}, -50%)`,
+      transition: `transform 250ms ease-in-out`,
 
-      '&:hover': {
-        backgroundColor: transparent.main,
-      },
+      "&.Mui-checked": {
+        transform: `translate(${pxToRem(22)}, -50%)`,
 
-      '&.Mui-checked': {
-        color: gradients.dark.main,
-
-        '&:hover': {
-          backgroundColor: transparent.main,
-        },
-
-        '& .MuiSwitch-thumb': {
-          borderColor: `${gradients.dark.main} !important`,
-        },
-
-        '& + .MuiSwitch-track': {
-          backgroundColor: `${gradients.dark.main} !important`,
-          borderColor: `${gradients.dark.main} !important`,
+        "& + .MuiSwitch-track": {
+          backgroundColor: `${rgba(gradients.info.state, 0.95)} !important`,
+          borderColor: `${rgba(gradients.info.state, 0.95)} !important`,
           opacity: 1,
         },
       },
 
-      '&.Mui-disabled + .MuiSwitch-track': {
-        opacity: '0.3 !important',
+      "&.Mui-disabled + .MuiSwitch-track": {
+        opacity: "0.3 !important",
       },
 
-      '&.Mui-focusVisible .MuiSwitch-thumb': {
+      "&.Mui-focusVisible .MuiSwitch-thumb": {
         backgroundImage: linearGradient(gradients.info.main, gradients.info.state),
       },
     },
 
     thumb: {
+      width: pxToRem(16),
+      height: pxToRem(16),
       backgroundColor: white.main,
       boxShadow: md,
-      border: `${borderWidth[1]} solid ${grey[400]}`,
+      top: "50%",
     },
 
     track: {
-      width: pxToRem(32),
-      height: pxToRem(15),
-      backgroundColor: grey[400],
-      border: `${borderWidth[1]} solid ${grey[400]}`,
+      backgroundColor: rgba(gradients.dark.state, 0.1),
+      border: `${borderWidth[1]} solid ${light.main}`,
+      borderRadius: pxToRem(160),
       opacity: 1,
+      transition: `background-color 250ms ease, border-color 200ms ease`,
     },
+
+    checked: {},
   },
 };

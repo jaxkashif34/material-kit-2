@@ -1,60 +1,53 @@
-// import colors borders and boxShadows
+// import colors borders
 import colors from '../base/colors';
 import borders from '../base/borders';
-import boxShadows from '../base/boxShadows';
 
 // import pxToRem and boxShadow
-import { pxToRem, boxShadow } from '../functions';
+import { pxToRem } from '../functions';
 
-const { grey, white, black, info } = colors;
-const { borderRadius, borderWidth } = borders;
-const { sliderBoxShadow } = boxShadows;
+const { light, black, info } = colors();
+const { borderRadius } = borders();
 
 export default {
   styleOverrides: {
     root: {
       width: '100%',
+
       '& .MuiSlider-active, & .Mui-focusVisible': {
         boxShadow: 'none !important',
       },
+
       '& .MuiSlider-valueLabel': {
         color: black.main,
       },
     },
 
     rail: {
-      height: pxToRem(2),
-      background: grey[200],
+      height: pxToRem(4),
+      backgroundColor: light.main,
       borderRadius: borderRadius.sm,
-      opacity: 1,
     },
+
     track: {
-      background: info.main,
-      height: pxToRem(2),
+      backgroundColor: info.main,
+      height: pxToRem(6),
       position: 'relative',
+      top: pxToRem(2),
       border: 'none',
       borderRadius: borderRadius.lg,
       zIndex: 1,
     },
 
     thumb: {
-      width: pxToRem(14),
-      height: pxToRem(14),
-      backgroundColor: white.main,
+      width: pxToRem(15),
+      height: pxToRem(15),
+      backgroundColor: info.main,
       zIndex: 10,
-      boxShadow: sliderBoxShadow.thumb,
-      border: `${borderWidth[1]} solid ${info.main}`,
-      transition: 'all 200ms linear',
+      boxShadow: 'none',
+      border: 0,
 
       '&:hover': {
         boxShadow: 'none',
-      },
-      '&:active': {
-        transform: 'translate(-50%, -50%) scale(1.4)',
-      },
-
-      '&.Mui-active': {
-        boxShadow: boxShadow([0, 0], [0, 14], info.main, 0.16),
       },
     },
   },

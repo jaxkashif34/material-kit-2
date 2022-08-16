@@ -1,7 +1,7 @@
 import colors from '../base/colors';
 import typography from '../base/typography';
 
-const { grey } = colors;
+const { grey } = colors();
 const { size } = typography;
 
 export default {

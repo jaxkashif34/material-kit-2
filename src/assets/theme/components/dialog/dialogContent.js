@@ -1,11 +1,11 @@
 import typography from '../../base/typography';
 import colors from '../../base/colors';
 import borders from '../../base/borders';
-
 import { pxToRem } from '../../functions';
+
 const { size } = typography;
-const { text } = colors;
-const { borderWidth, borderColor } = borders;
+const { text } = colors();
+const { borderWidth, borderColor } = borders();
 
 export default {
   styleOverrides: {

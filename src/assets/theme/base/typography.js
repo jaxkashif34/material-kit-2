@@ -1,11 +1,9 @@
-import colors from "./colors";
-import { pxToRem } from "../functions";
+import colors from './colors';
+import { pxToRem } from '../functions';
 
-const { dark } = colors;
+const { dark } = colors();
 const baseProperties = {
-  fontFamily: `"Roboto", "Helvetica", "Arial", "sans-serif"`,
-  fontFamily2: `"Roboto Slab", "sans-serif"`,
-  fontWeightLighter: 100,
+  fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
   fontWeightLight: 300,
   fontWeightRegular: 400,
   fontWeightMedium: 600,
@@ -16,14 +14,12 @@ const baseProperties = {
   fontSizeMD: pxToRem(16),
   fontSizeLG: pxToRem(18),
   fontSizeXL: pxToRem(20),
-  fontSize2XL: pxToRem(24),
-  fontSize3XL: pxToRem(30),
 };
 
 const baseHeadingProperties = {
   color: dark.main,
-  fontWeight: baseProperties.fontWeightBold,
-  fontFamily: baseProperties.fontFamily2,
+  fontWeight: baseProperties.fontWeightMedium,
+  fontFamily: baseProperties.fontFamily,
 };
 
 const baseDisplayProperties = {
@@ -35,11 +31,10 @@ const baseDisplayProperties = {
 
 const typography = {
   fontFamily: baseProperties.fontFamily,
-  fontWeightLighter: baseProperties.fontWeightLighter,
-  fontWeightBold: baseProperties.fontWeightBold,
   fontWeightLight: baseProperties.fontWeightLight,
-  fontWeightMedium: baseProperties.fontWeightMedium,
   fontWeightRegular: baseProperties.fontWeightRegular,
+  fontWeightMedium: baseProperties.fontWeightMedium,
+  fontWeightBold: baseProperties.fontWeightBold,
 
   h1: {
     fontSize: pxToRem(48),
@@ -75,13 +70,13 @@ const typography = {
   subtitle1: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeXL,
-    fontWeight: baseProperties.fontWeightLight,
+    fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.625,
   },
   subtitle2: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeMD,
-    fontWeight: baseProperties.fontWeightLight,
+    fontWeight: baseProperties.fontWeightMedium,
     lineHeight: 1.6,
   },
   body1: {
@@ -93,20 +88,20 @@ const typography = {
   body2: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeMD,
-    fontWeight: baseProperties.fontWeightLight,
+    fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.6,
   },
   button: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeSM,
-    fontWeight: baseProperties.fontWeightLight,
+    fontWeight: baseProperties.fontWeightBold,
     lineHeight: 1.5,
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
   },
   caption: {
     fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeXS,
-    fontWeight: baseProperties.fontWeightLight,
+    fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.25,
   },
 
@@ -146,8 +141,6 @@ const typography = {
     md: baseProperties.fontSizeMD,
     lg: baseProperties.fontSizeLG,
     xl: baseProperties.fontSizeXL,
-    "2xl": baseProperties.fontSize2XL,
-    "3xl": baseProperties.fontSize3XL,
   },
   lineHeight: {
     sm: 1.25,

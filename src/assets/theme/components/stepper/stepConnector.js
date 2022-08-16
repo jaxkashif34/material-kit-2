@@ -1,21 +1,21 @@
 import borders from '../../base/borders';
 import colors from '../../base/colors';
 
-const { white } = colors;
-const { borderWidth } = borders;
+const { dark } = colors();
+const { borderWidth, borderColor } = borders();
 
 export default {
   styleOverrides: {
     root: {
-      color: '#9ffc9ff',
+      color: borderColor,
       transition: 'all 200ms linear',
 
       '&.Mui-active': {
-        color: white.main,
+        color: dark.main,
       },
 
       '&.Mui-completed': {
-        color: white.main,
+        color: dark.main,
       },
     },
 
@@ -27,8 +27,7 @@ export default {
 
     line: {
       borderWidth: `${borderWidth[2]} !important`,
-      borderColo: 'currentColor',
-      opacity: 0.5,
+      borderColor: 'currentColor',
     },
   },
 };

@@ -5,8 +5,8 @@ import colors from '../../base/colors';
 // import pxToRem
 import { pxToRem } from '../../functions';
 
-const { borderWidth } = borders;
-const { light } = colors;
+const { borderWidth } = borders();
+const { light } = colors();
 
 export default {
   styleOverrides: {

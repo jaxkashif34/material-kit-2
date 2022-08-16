@@ -4,12 +4,12 @@ import boxShadows from '../../base/boxShadows';
 import borders from '../../base/borders';
 import { pxToRem } from '../../functions';
 
-const { text, white } = colors;
+const { text, background, white } = colors();
 const { size } = typography;
-const { lg } = boxShadows;
-const { borderRadius } = borders;
+const { lg } = boxShadows();
+const { borderRadius } = borders();
 
-export default {
+const menu = (isDark) => ({
   defaultProps: {
     disableAutoFocusItem: true,
   },
@@ -22,8 +22,10 @@ export default {
       fontSize: size.sm,
       color: text.main,
       textAlign: 'left',
-      backgroundColor: `${white.main} !important`,
+      backgroundColor: `${isDark ? background.dark : white.main} !important`,
       borderRadius: borderRadius.md,
     },
   },
-};
+});
+
+export default menu;
