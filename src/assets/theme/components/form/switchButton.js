@@ -7,7 +7,7 @@ import boxShadows from '../../base/boxShadows';
 import { pxToRem, linearGradient } from '../../functions';
 
 // destructure white, gradients, grey and transparent borderWidth and md
-const { white, gradients, grey, transparent } = colors;
+const { white, gradients, grey, transparent } = colors();
 const { borderWidth } = borders;
 const { md } = boxShadows;
 

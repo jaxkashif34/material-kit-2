@@ -5,7 +5,7 @@ import typography from '../../base/typography';
 import { pxToRem } from '../../functions';
 
 // destructure dark from colors
-const { dark } = colors;
+const { dark } = colors();
 // destructure size and fontWeightBold from typography
 const { size, fontWeightBold } = typography;
 

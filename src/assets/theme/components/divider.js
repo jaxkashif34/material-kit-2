@@ -4,7 +4,7 @@ import colors from '../base/colors';
 // import rgba and pxToRem
 import { rgba, pxToRem } from '../functions';
 
-const { dark, white } = colors;
+const { dark, white } = colors();
 
 export default {
   styleOverrides: {

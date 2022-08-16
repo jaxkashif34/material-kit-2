@@ -5,7 +5,7 @@ import colors from '../../base/colors';
 import { pxToRem } from '../../functions';
 
 // destructure transparent
-const { transparent } = colors;
+const { transparent } = colors();
 
 export default {
   styleOverrides: {

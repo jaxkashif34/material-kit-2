@@ -1,19 +1,26 @@
 import React from 'react';
-import ThemeConfig from './assets/theme';
-import { Typography, Button, Tooltip, Collapse, Grow, Fade } from '@mui/material';
+import { Typography, Paper, Container } from '@mui/material';
+import { setDarkMode, useConfig } from './context';
+import { useTheme } from '@mui/material';
 
 export default function App() {
-  return (
-    <ThemeConfig>
-      <Typography variant="h1">App commponent testing git push and pull request</Typography>
-      
-    <Typography variant="h1">Create the experiment branch</Typography>
-    
-      <Typography variant="h1">App commponent testing git push and pull request Master Branch</Typography>
+  const { controller, dispatch, setEnabled } = useConfig();
+  const { darkMode } = controller;
 
-      <Tooltip title="Add" TransitionComponent={Grow}>
-        <Button variant="contained">Click me</Button>
-      </Tooltip>
-    </ThemeConfig>
+  const theme = useTheme();
+  return (
+    <Paper style={{ backgroundColor: theme.palette.background.default }}>
+      <Typography
+        variant="body1"
+        onClick={() => {
+          const value = {
+            setEnabled,
+            mode: !darkMode,
+          };
+          setDarkMode(dispatch, value);
+        }}>
+        App commponent
+      </Typography>
+    </Paper>
   );
 }

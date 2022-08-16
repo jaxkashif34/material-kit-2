@@ -1,7 +1,7 @@
-import colors from "./colors";
-import { pxToRem } from "../functions";
+import colors from './colors';
+import { pxToRem } from '../functions';
 
-const { dark } = colors;
+const { dark } = colors();
 const baseProperties = {
   fontFamily: `"Roboto", "Helvetica", "Arial", "sans-serif"`,
   fontFamily2: `"Roboto Slab", "sans-serif"`,
@@ -101,7 +101,7 @@ const typography = {
     fontSize: baseProperties.fontSizeSM,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.5,
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
   },
   caption: {
     fontFamily: baseProperties.fontFamily,
@@ -146,8 +146,8 @@ const typography = {
     md: baseProperties.fontSizeMD,
     lg: baseProperties.fontSizeLG,
     xl: baseProperties.fontSizeXL,
-    "2xl": baseProperties.fontSize2XL,
-    "3xl": baseProperties.fontSize3XL,
+    '2xl': baseProperties.fontSize2XL,
+    '3xl': baseProperties.fontSize3XL,
   },
   lineHeight: {
     sm: 1.25,

@@ -4,7 +4,7 @@ import boxShadows from '../../base/boxShadows';
 import borders from '../../base/borders';
 import { pxToRem } from '../../functions';
 
-const { text, white } = colors;
+const { text, white } = colors();
 const { size } = typography;
 const { lg } = boxShadows;
 const { borderRadius } = borders;

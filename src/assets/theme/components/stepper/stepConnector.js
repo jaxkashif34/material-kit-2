@@ -1,7 +1,7 @@
 import borders from '../../base/borders';
 import colors from '../../base/colors';
 
-const { white } = colors;
+const { white } = colors();
 const { borderWidth } = borders;
 
 export default {

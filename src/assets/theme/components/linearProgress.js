@@ -3,7 +3,7 @@ import { pxToRem } from '../functions';
 import colors from '../base/colors';
 import borders from '../base/borders';
 
-const { light } = colors;
+const { light } = colors();
 const { borderRadius } = borders;
 
 export default {

@@ -7,7 +7,7 @@ import { pxToRem } from '../../functions';
 
 const { lg } = boxShadows;
 const { size } = typography;
-const { text, white, transparent, light, dark, gradients } = colors;
+const { text, white, transparent, light, dark, gradients } = colors();
 const { borderRadius } = borders;
 
 export default {

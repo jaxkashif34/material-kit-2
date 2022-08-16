@@ -3,7 +3,7 @@ import colors from '../../base/colors';
 
 import { pxToRem, rgba } from '../../functions';
 
-const { white } = colors;
+const { white } = colors();
 const { size, fontWeightRegular } = typography;
 
 export default {

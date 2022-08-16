@@ -6,7 +6,7 @@ import boxShadows from '../base/boxShadows';
 // import pxToRem and boxShadow
 import { pxToRem, boxShadow } from '../functions';
 
-const { grey, white, black, info } = colors;
+const { grey, white, black, info } = colors();
 const { borderRadius, borderWidth } = borders;
 const { sliderBoxShadow } = boxShadows;
 

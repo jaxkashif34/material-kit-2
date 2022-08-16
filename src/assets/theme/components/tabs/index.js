@@ -4,7 +4,7 @@ import boxShadows from '../../base/boxShadows';
 
 import { pxToRem } from '../../functions';
 
-const { grey, white } = colors;
+const { grey, white } = colors();
 const { borderRadius } = borders;
 const { tabsBoxShadow } = boxShadows;
 

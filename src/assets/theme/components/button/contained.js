@@ -3,7 +3,7 @@ import typography from '../../base/typography';
 
 import { pxToRem } from '../../functions';
 
-const { white, text, info, secondary } = colors;
+const { white, text, info, secondary } = colors();
 
 const { size } = typography;
 

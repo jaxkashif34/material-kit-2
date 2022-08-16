@@ -4,7 +4,7 @@ import colors from '../../base/colors';
 import { pxToRem, linearGradient } from '../../functions';
 
 const { borderWidth, borderColor } = borders;
-const { info, transparent } = colors;
+const { info, transparent } = colors();
 
 export default {
   styleOverrides: {

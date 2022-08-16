@@ -6,7 +6,7 @@ import typography from '../../base/typography';
 import borders from '../../base/borders';
 
 // destructure dark inputBorderColor info from colors
-const { dark, inputBorderColor, info } = colors;
+const { dark, inputBorderColor, info } = colors();
 // destructure size from typography
 const { size } = typography;
 // destructure borderWidth from borders

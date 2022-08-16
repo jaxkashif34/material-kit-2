@@ -1,8 +1,7 @@
-import colors from "./colors";
-import { pxToRem } from "../functions";
+import colors from './colors';
+import { pxToRem } from '../functions';
 
-const { grey } = colors;
-
+const { grey } = colors();
 export default {
   borderColor: grey[300],
 

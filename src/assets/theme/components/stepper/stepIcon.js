@@ -2,7 +2,7 @@ import colors from '../../base/colors';
 
 import { boxShadow, pxToRem } from '../../functions';
 
-const { white } = colors;
+const { white } = colors();
 
 export default {
   styleOverrides: {

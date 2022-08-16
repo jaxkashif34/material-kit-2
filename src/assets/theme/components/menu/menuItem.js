@@ -3,7 +3,7 @@ import typography from '../../base/typography';
 import borders from '../../base/borders';
 import { pxToRem } from '../../functions';
 
-const { light, text, dark } = colors;
+const { light, text, dark } = colors();
 const { borderRadius } = borders;
 const { size } = typography;
 

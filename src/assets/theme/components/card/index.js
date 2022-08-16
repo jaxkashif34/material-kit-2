@@ -3,7 +3,7 @@ import colors from '../../base/colors';
 import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
 
-const { black, white } = colors;
+const { black, white } = colors();
 const { borderWidth, borderRadius } = borders;
 const { md } = boxShadows;
 

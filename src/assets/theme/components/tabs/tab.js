@@ -4,7 +4,7 @@ import colors from '../../base/colors';
 
 import { pxToRem } from '../../functions';
 
-const { dark } = colors;
+const { dark } = colors();
 const { borderRadius } = borders;
 const { size, fontWeightRegular } = typography;
 

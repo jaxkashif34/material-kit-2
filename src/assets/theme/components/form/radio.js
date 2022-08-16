@@ -9,7 +9,7 @@ import { pxToRem, linearGradient } from '../../functions';
 const { borderWidth, borderColor } = borders;
 
 // destructure the transparent and info from colors
-const { transparent, info } = colors;
+const { transparent, info } = colors();
 
 export default {
   styleOverrides: {

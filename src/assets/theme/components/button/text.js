@@ -1,7 +1,7 @@
 import colors from '../../base/colors';
 import typography from '../../base/typography';
 import { pxToRem } from '../../functions';
-const { transparent, text, info, secondary } = colors;
+const { transparent, text, info, secondary } = colors();
 
 const { size } = typography;
 

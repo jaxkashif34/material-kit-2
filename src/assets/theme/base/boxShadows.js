@@ -1,6 +1,6 @@
 import { boxShadow } from '../functions';
 import colors from './colors';
-const { black, tabs, coloredShadows, white } = colors;
+const { black, tabs, coloredShadows, white } = colors();
 export default {
   // createRootShadow
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),

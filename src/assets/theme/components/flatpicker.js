@@ -1,7 +1,7 @@
 import colors from '../base/colors';
 import { rgba } from '../functions';
 
-const { info, white, gradients } = colors;
+const { info, white, gradients } = colors();
 
 export default {
   '.flatpickr-day:hover, .flatpickr-day:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.nextMonthDay:focus': {

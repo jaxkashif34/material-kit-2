@@ -5,7 +5,7 @@ import borders from '../base/borders';
 
 import { pxToRem } from '../functions';
 
-const { black, light } = colors;
+const { black, light } = colors();
 const { size, fontWeightRegular } = typography;
 const { borderRadius } = borders;
 

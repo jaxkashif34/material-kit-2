@@ -6,7 +6,7 @@ import typography from '../../base/typography';
 import { pxToRem } from '../../functions';
 
 // destructure inputBorderColor, info, grey and transparent from colors and borderRadius from borders and size from typography
-const { inputBorderColor, info, grey, transparent } = colors;
+const { inputBorderColor, info, grey, transparent } = colors();
 const { borderRadius } = borders;
 const { size } = typography;
 

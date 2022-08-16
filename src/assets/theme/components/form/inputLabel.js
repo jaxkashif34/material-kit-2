@@ -3,7 +3,7 @@ import colors from '../../base/colors';
 import typography from '../../base/typography';
 
 // destructure text, info from colors and size from typography
-const { text, info } = colors;
+const { text, info } = colors();
 const { size } = typography;
 
 export default {

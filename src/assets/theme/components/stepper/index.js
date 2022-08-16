@@ -4,7 +4,7 @@ import boxShadows from '../../base/boxShadows';
 
 import { pxToRem, linearGradient } from '../../functions';
 
-const { transparent, gradients } = colors;
+const { transparent, gradients } = colors();
 const { borderRadius } = borders;
 const { colored } = boxShadows;
 
