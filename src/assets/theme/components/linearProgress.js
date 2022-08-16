@@ -3,32 +3,33 @@ import { pxToRem } from '../functions';
 import colors from '../base/colors';
 import borders from '../base/borders';
 
-const { light } = colors();
-const { borderRadius } = borders;
+const { grey, light } = colors();
+const { borderRadius } = borders();
 
-export default {
+const linearProgress = (isDark) => ({
   styleOverrides: {
     root: {
-      height: pxToRem(6),
+      height: pxToRem(3),
       borderRadius: borderRadius.md,
       overflow: 'visible',
       position: 'relative',
     },
 
     colorPrimary: {
-      backgroundColor: light.main,
+      backgroundColor: isDark ? grey[400] : light.main,
     },
 
     colorSecondary: {
-      backgroundColor: light.main,
+      backgroundColor: isDark ? grey[400] : light.main,
     },
 
     bar: {
-      height: pxToRem(6),
+      height: '100%',
       borderRadius: borderRadius.sm,
       position: 'absolute',
       transform: `translate(0, 0) !important`,
       transition: 'width 0.6s ease !important',
     },
   },
-};
+});
+export default linearProgress;

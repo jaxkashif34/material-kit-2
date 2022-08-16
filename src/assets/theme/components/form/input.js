@@ -1,31 +1,24 @@
 // import colors
 import colors from '../../base/colors';
-// import typography
-import typography from '../../base/typography';
 // imoprt borders
 import borders from '../../base/borders';
+import { pxToRem } from '../../functions';
 
 // destructure dark inputBorderColor info from colors
-const { dark, inputBorderColor, info } = colors();
-// destructure size from typography
-const { size } = typography;
+const { inputColors } = colors();
 // destructure borderWidth from borders
-const { borderWidth } = borders;
+const { borderWidth, borderRadius } = borders();
 
 export default {
   styleOverrides: {
     root: {
-      fontSize: size.sm,
-      color: dark.main,
-      '&:hover:not(.Mui-disabled):before': {
-        borderBottom: `${borderWidth[1]} solid ${inputBorderColor}`,
-      },
-      '&:before': {
-        borderColor: inputBorderColor,
-      },
+      display: 'flex !important',
+      padding: `${pxToRem(8)} ${pxToRem(12)}`,
+      border: `${borderWidth[1]} solid ${inputColors.borderColor.main}`,
+      borderRadius: `${borderRadius.md} !important`,
 
-      '&:after': {
-        borderColor: info.main,
+      '& fieldset': {
+        border: 'none',
       },
     },
   },

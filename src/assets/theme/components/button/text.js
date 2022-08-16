@@ -1,24 +1,26 @@
 import colors from '../../base/colors';
 import typography from '../../base/typography';
 import { pxToRem } from '../../functions';
-const { transparent, text, info, secondary } = colors();
+const { transparent, grey, info, secondary } = colors();
 
 const { size } = typography;
 
 export default {
   base: {
-    minHeight: pxToRem(40),
     backgroundColor: transparent.main,
-    color: text.main,
+    height: 'max-content',
+    color: info.main,
     boxShadow: 'none',
-    padding: `${pxToRem(10)} ${pxToRem(24)}`,
+    padding: `${pxToRem(6)} ${pxToRem(12)}`,
 
     '&:hover': {
       backgroundColor: transparent.main,
       boxShadow: 'none',
+      color: info.focus,
     },
     '&:focus': {
       boxShadow: 'none',
+      color: info.focus,
     },
 
     '&:active, &:active:focus, &:active:hover': {
@@ -28,55 +30,57 @@ export default {
 
     '&:disabled': {
       boxShadow: 'none',
+      color: grey[600],
     },
 
-    '& .material-icons, .material-icons-round, svg': {
+    '& .material-icons, .material-icons-round, svg, span': {
       fontSize: `${pxToRem(16)} !important`,
     },
   },
 
   small: {
-    minHeight: pxToRem(32),
-    padding: `${pxToRem(6)} ${pxToRem(16)}`,
     fontSize: size.xs,
-    '& .material-icons, .material-icons-round, svg': {
+    '& .material-icons, .material-icons-round, svg, span': {
       fontSize: `${pxToRem(12)} !important`,
     },
   },
 
   large: {
-    minHeight: pxToRem(47),
-    padding: `${pxToRem(12)} ${pxToRem(28)}`,
     fontSize: size.sm,
 
-    '& .material-icons, .material-icons-round, svg': {
+    '& .material-icons, .material-icons-round, svg, span': {
       fontSize: `${pxToRem(22)} !important`,
     },
   },
 
   primary: {
     color: info.main,
+    backgroundColor: transparent.main,
 
     '&:hover': {
-      color: info.main,
+      color: info.focus,
+      backgroundColor: transparent.main,
     },
 
     '&:focus:not(:hover)': {
-      color: info.main,
+      backgroundColor: transparent.main,
+      color: info.focus,
       boxShadow: 'none',
     },
   },
 
   secondary: {
-    color: secondary.main,
-    borderColor: secondary.main,
+    color: secondary.focus,
+    backgroundColor: transparent.main,
 
     '&:hover': {
       color: secondary.main,
+      backgroundColor: transparent.main,
     },
 
     '&:focus:not(:hover)': {
-      color: secondary.main,
+      backgroundColor: transparent.main,
+      color: secondary.focus,
       boxShadow: 'none',
     },
   },

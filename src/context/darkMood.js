@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useMediaQuery } from '@mui/material';
 // explain each line of code
 const useLocalStorage = (key, initialValue) => {
   // custom hook to set and get local storage state
@@ -30,7 +31,8 @@ const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 };
 const useDarkMode = () => {
-  const [enabled, setEnabled] = useLocalStorage('dark-theme', false); // set the value of dark-theme to enabled
+  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [enabled, setEnabled] = useLocalStorage('dark-theme', isDarkMode); // set the value of dark-theme to enabled
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     // add an event listener to the window to receive the change in OS color scheme

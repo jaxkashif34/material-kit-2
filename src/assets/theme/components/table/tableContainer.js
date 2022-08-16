@@ -3,16 +3,18 @@ import colors from '../../base/colors';
 import boxShadows from '../../base/boxShadows';
 import borders from '../../base/borders';
 
-const { white } = colors();
-const { md } = boxShadows;
-const { borderRadius } = borders;
+const { background, white } = colors();
+const { cardBoxShadow } = boxShadows();
+const { borderRadius } = borders();
 
-export default {
+const tableContainer = (isDark) => ({
   styleOverrides: {
     root: {
-      backgroundColor: white.main,
-      boxShadows: md,
+      backgroundColor: isDark ? background.dark : white.main,
+      boxShadow: cardBoxShadow,
       borderRadius: borderRadius.xl,
     },
   },
-};
+});
+
+export default tableContainer;

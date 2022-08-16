@@ -2,7 +2,6 @@ import { createTheme } from '@mui/material/styles';
 import { colors, borders, boxShadows, breakpoints, globals, typography } from '../base';
 import { boxShadow, gradientChartLine, hexToRgb, pxToRem, rgba, linearGradient } from '../functions';
 import {
-  flatpicker,
   container,
   list,
   listItem,
@@ -13,9 +12,6 @@ import {
   button,
   iconButton,
   input,
-  inputLabel,
-  inputOutlined,
-  textField,
   switchButton,
   select,
   formControllLabel,
@@ -50,14 +46,16 @@ import {
   dialogTitle,
   menu,
   menuItem,
+  inputBase,
+  sideNav,
 } from '../components';
 export const themeObj = (isDark) => {
   return createTheme({
     palette: { mode: isDark ? 'dark' : 'light', ...colors(isDark) },
     breakpoints: breakpoints,
     typography: typography,
-    boxShadows: boxShadows,
-    borders: borders,
+    boxShadows: boxShadows(isDark),
+    borders: borders(isDark),
     functions: {
       boxShadow,
       gradientChartLine,
@@ -71,7 +69,6 @@ export const themeObj = (isDark) => {
       MuiCssBaseline: {
         styleOverrides: {
           ...globals,
-          ...flatpicker,
           ...container,
         },
       },
@@ -80,7 +77,7 @@ export const themeObj = (isDark) => {
       MuiListItem: listItem,
       MuiListItemText: listItemText,
       // card
-      MuiCard: card,
+      MuiCard: card(isDark),
       MuiCardMedia: cardMedia,
       MuiCardContent: cardContent,
       // button
@@ -89,24 +86,22 @@ export const themeObj = (isDark) => {
       MuiIconButton: iconButton,
       // forms
       MuiInput: input,
-      MuiInputLabel: inputLabel,
-      MuiOutlinedInput: inputOutlined,
-      MuiTextField: textField,
+      MuiInputBase: inputBase(isDark),
       MuiSwitch: switchButton,
       MuiSelect: select,
       MuiFormControlLabel: formControllLabel,
       MuiFormLabel: formLabel,
       MuiCheckbox: checkBox,
       MuiRadio: radio,
-      MuiAutocomplete: autoComplete,
+      MuiAutocomplete: autoComplete(isDark),
       // divider
-      MuiDivider: divider,
+      MuiDivider: divider(isDark),
       // table
-      MuiTableContainer: tableContainer,
+      MuiTableContainer: tableContainer(isDark),
       MuiTableHead: tableHead,
       MuiTableCell: tableCell,
       // linearProgress
-      MuiLinearProgress: linearProgress,
+      MuiLinearProgress: linearProgress(isDark),
       // breadCrumbs
       MuiBreadcrumbs: breadCrumbs,
       // slider
@@ -114,12 +109,12 @@ export const themeObj = (isDark) => {
       // avatar
       MuiAvatar: avatar,
       // tooltip
-      MuiTooltip: tooltip,
+      MuiTooltip: tooltip(isDark),
       // appBar (NavBar)
       MuiAppBar: appBar,
       // tabs
-      MuiTabs: tabs,
-      MuiTab: tab,
+      MuiTabs: tabs(isDark),
+      MuiTab: tab(isDark),
       // stepper
       MuiStepper: stepper,
       MuiStep: step,
@@ -139,8 +134,10 @@ export const themeObj = (isDark) => {
       MuiDialogContentText: dialogContentText,
       MuiDialogActions: dialogAction,
       // menu
-      MuiMenu: menu,
-      MuiMenuItem: menuItem,
+      MuiMenu: menu(isDark),
+      MuiMenuItem: menuItem(isDark),
+      // Drawer
+      MuiDrawer: sideNav(isDark),
     },
   });
 };

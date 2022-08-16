@@ -1,12 +1,12 @@
 // import colors
 import colors from '../../base/colors';
 // destructure text from colors
-const { text } = colors();
+const { dark } = colors();
 
 export default {
   styleOverrides: {
     root: {
-      color: text.main,
+      color: dark.main,
     },
   },
 };

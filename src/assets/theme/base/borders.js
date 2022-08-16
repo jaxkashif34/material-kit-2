@@ -1,9 +1,9 @@
 import colors from './colors';
-import { pxToRem } from '../functions';
+import { pxToRem, rgba } from '../functions';
 
-const { grey } = colors();
-export default {
-  borderColor: grey[300],
+const { grey, white } = colors();
+const borders = (isDark) => ({
+  borderColor: isDark ? rgba(white.main, 0.15) : grey[300],
 
   borderWidth: {
     0: 0,
@@ -15,12 +15,14 @@ export default {
   },
 
   borderRadius: {
-    xs: pxToRem(1.6),
-    sm: pxToRem(2),
-    md: pxToRem(2),
-    lg: pxToRem(8),
-    xl: pxToRem(12),
-    xxl: pxToRem(16),
+    xs: pxToRem(2),
+    sm: pxToRem(4),
+    md: pxToRem(5),
+    lg: pxToRem(12),
+    xl: pxToRem(16),
+    xxl: pxToRem(24),
     section: pxToRem(160),
   },
-};
+});
+
+export default borders;

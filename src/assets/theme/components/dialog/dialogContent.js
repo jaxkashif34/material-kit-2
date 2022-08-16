@@ -5,7 +5,7 @@ import { pxToRem } from '../../functions';
 
 const { size } = typography;
 const { text } = colors();
-const { borderWidth, borderColor } = borders;
+const { borderWidth, borderColor } = borders();
 
 export default {
   styleOverrides: {

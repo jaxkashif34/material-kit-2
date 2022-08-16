@@ -5,12 +5,12 @@ import colors from '../../base/colors';
 // helper function
 import { pxToRem } from '../../functions';
 
-const { lg } = boxShadows;
+const { lg } = boxShadows();
 const { size } = typography;
-const { text, white, transparent, light, dark, gradients } = colors();
-const { borderRadius } = borders;
+const { text, white, transparent, light, dark, gradients, background } = colors();
+const { borderRadius } = borders();
 
-export default {
+const autoComplete = (isDark) => ({
   styleOverrides: {
     popper: {
       boxShadows: lg,
@@ -18,7 +18,7 @@ export default {
       fontSize: size.sm,
       color: text.main,
       textAlign: 'left',
-      backgroundColor: `${white.main} !important`,
+      backgroundColor: `${isDark ? background.dark : white.main} !important`,
       borderRadius: borderRadius.md,
     },
 
@@ -75,4 +75,5 @@ export default {
       },
     },
   },
-};
+});
+export default autoComplete;

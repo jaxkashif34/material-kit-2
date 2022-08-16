@@ -1,28 +1,39 @@
 import colors from '../../base/colors';
+import borders from '../../base/borders';
 
 import { boxShadow, pxToRem } from '../../functions';
 
-const { white } = colors();
+const { white, dark } = colors();
+const { borderWidth, borderColor } = borders();
 
 export default {
   styleOverrides: {
     root: {
-      background: '#9fc9ff',
-      fill: '#9fc9ff',
-      stroke: '#9fc9ff',
+      background: white.main,
+      fill: white.main,
+      stroke: white.main,
       strokeWidth: pxToRem(10),
       width: pxToRem(13),
       height: pxToRem(13),
-      borderRadius: '50%',
+      border: `${borderWidth[2]} solid ${borderColor}`,
+      borderRadius: "50%",
       zIndex: 99,
-      transition: 'all 200ms linear',
+      transition: "all 200ms linear",
 
-      '&.Mui-active': {
-        background: white.main,
-        fill: white.main,
-        stroke: white.main,
-        borderColor: white.main,
-        boxShadow: boxShadow([0, 0], [0, 2], white.main, 1),
+      "&.Mui-active": {
+        background: dark.main,
+        fill: dark.main,
+        stroke: dark.main,
+        borderColor: dark.main,
+        boxShadow: boxShadow([0, 0], [0, 2], dark.main, 1),
+      },
+
+      "&.Mui-completed": {
+        background: dark.main,
+        fill: dark.main,
+        stroke: dark.main,
+        borderColor: dark.main,
+        boxShadow: boxShadow([0, 0], [0, 2], dark.main, 1),
       },
     },
   },

@@ -20,4 +20,9 @@ export default {
   'a.link:hover, .link:hover, a.link:focus, .link:focus': {
     color: `${info.main} !important`,
   },
+  hr:{
+    borderBottom: 0,
+    borderLeft: 0,
+    borderRight: 0,
+  }
 };

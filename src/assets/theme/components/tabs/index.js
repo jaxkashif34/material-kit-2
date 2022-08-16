@@ -4,16 +4,16 @@ import boxShadows from '../../base/boxShadows';
 
 import { pxToRem } from '../../functions';
 
-const { grey, white } = colors();
-const { borderRadius } = borders;
-const { tabsBoxShadow } = boxShadows;
+const { background, grey, white } = colors();
+const { borderRadius } = borders();
+const { tabsBoxShadow } = boxShadows();
 
-export default {
+const tabs = (isDark) => ({
   styleOverrides: {
     root: {
       position: 'relative',
-      backgroundColor: grey[100],
-      borderRadius: borderRadius.xl,
+      backgroundColor: isDark ? background.default : grey[100],
+      borderRadius: borderRadius.lg,
       minHeight: 'unset',
       padding: pxToRem(4),
     },
@@ -28,17 +28,21 @@ export default {
       overflow: 'unset !important',
       overflowX: 'unset !important',
     },
+
     vertical: {
       '& .MuiTabs-indicator': {
         width: '100%',
       },
     },
+
     indicator: {
       height: '100%',
-      borderRadius: borderRadius.lg,
-      backgroundColor: white.main,
+      borderRadius: borderRadius.md,
+      backgroundColor: isDark ? background.dark : white.main,
       boxShadow: tabsBoxShadow.indicator,
       transition: 'all 500ms ease',
     },
   },
-};
+});
+
+export default tabs;

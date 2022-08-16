@@ -5,11 +5,11 @@ import borders from '../base/borders';
 
 import { pxToRem } from '../functions';
 
-const { black, light } = colors();
+const { black, white, light } = colors();
 const { size, fontWeightRegular } = typography;
-const { borderRadius } = borders;
+const { borderRadius } = borders();
 
-export default {
+const tooltip = (isDark) => ({
   defaultProps: {
     arrow: true,
     TransitionComponent: Fade,
@@ -19,7 +19,7 @@ export default {
     tooltip: {
       maxWidth: pxToRem(200),
       backgroundColor: black.main,
-      color: light.main,
+      color: isDark ? white.main : light.main,
       fontSize: size.sm,
       fontWeight: fontWeightRegular,
       textAlign: 'center',
@@ -32,4 +32,6 @@ export default {
       color: black.main,
     },
   },
-};
+});
+
+export default tooltip;

@@ -272,17 +272,6 @@ const colors = (isDark) => {
         text: '#1e2e4a',
       },
     },
-    coloredShadows: {
-      primary: '#e91e62',
-      secondary: '#110e0e',
-      info: '#00bbd4',
-      success: '#4caf4f',
-      warning: '#ff9900',
-      error: '#f44336',
-      light: '#adb5bd',
-      dark: '#404040',
-    },
-
     inputColors: {
       borderColor: { main: isDark ? '#f0f2f566' : '#d2d6da', focus: '#11cdef' },
       error: '#f5365c',
