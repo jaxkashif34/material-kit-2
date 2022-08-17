@@ -1,26 +1,21 @@
 import React from 'react';
-import { Typography, Paper } from '@mui/material';
-import { setDarkMode, useConfig } from './context';
-import { useTheme } from '@mui/material';
-
+import { useConfig } from './context';
+import DirectionWraper from 'components/direction-wraper';
+import SideNavConfigrator from 'components/sideNavConfigrator';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { getRoutes, routes } from 'routes';
 export default function App() {
-  const { controller, dispatch, setEnabled } = useConfig();
-  const { darkMode } = controller;
+  const { controller } = useConfig();
+  const { layout } = controller;
 
-  const theme = useTheme();
   return (
-    <Paper style={{ backgroundColor: theme.palette.background.default }}>
-      <Typography
-        variant="body1"
-        onClick={() => {
-          const value = {
-            setEnabled,
-            mode: !darkMode,
-          };
-          setDarkMode(dispatch, value);
-        }}>
-        App commponent
-      </Typography>
-    </Paper>
+    <DirectionWraper>
+      {layout === 'dashboard' ? <SideNavConfigrator /> : layout === 'vr' ? <h3>Configrator</h3> : null}
+      {/* <ArgonBox /> */}
+      <Routes>
+        {getRoutes(routes)}
+        <Route path="/" element={<Navigate to="/dashboard" />} />
+      </Routes>
+    </DirectionWraper>
   );
 }

@@ -49,8 +49,9 @@ import {
   inputBase,
   sideNav,
 } from './components';
-export const themeObj = (isDark) => {
+export const themeObj = (isDark, direction) => {
   return createTheme({
+    direction,
     palette: { mode: isDark ? 'dark' : 'light', ...colors(isDark) },
     breakpoints: breakpoints,
     typography: typography,

@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-const pxToRem = (num, baseNumber = 10) => `${num / baseNumber}rem`; // 16px = 1rem
+const pxToRem = (num, baseNumber = 16) => `${num / baseNumber}rem`; // 16px = 1rem
 
 const linearGradient = (
   color,
