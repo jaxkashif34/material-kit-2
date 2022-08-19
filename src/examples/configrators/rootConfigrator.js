@@ -5,7 +5,6 @@ export default styled(Drawer)(({ theme, ownerState }) => {
   const { boxShadows, functions, transitions } = theme;
   const { openConfig } = ownerState;
 
-  console.log(openConfig);
   const configWidth = 360;
 
   const { lg } = boxShadows;
