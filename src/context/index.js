@@ -26,14 +26,11 @@ const reducer = (state, { type, value }) => {
     case TYPES.DARK_SIDENAV: {
       return { ...state, darkSideNav: value };
     }
-    case TYPES.DARK_SIDENAV: {
-      return { ...state, darkSideNav: value };
-    }
     case TYPES.FIXED_NAVBAR: {
       return { ...state, fixedNavbar: value };
     }
     case TYPES.MINI_SIDENAV: {
-      return { ...state, miniSideNav: value };
+      return { ...state, isMiniSideNavOpen: value };
     }
     default: {
       throw new Error(`Unhandled action type: ${type}`);
@@ -51,7 +48,7 @@ const ContextProvider = ({ children }) => {
     sideNavColor: null,
     darkSideNav: false,
     fixedNavbar: false,
-    miniSideNav: false,
+    isMiniSideNavOpen: false,
   };
   const [controller, dispatch] = useReducer(reducer, initialValues);
 

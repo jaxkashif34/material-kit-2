@@ -3,14 +3,14 @@ import RootConfigrator from './rootConfigrator';
 import ArgonBox from 'components/ArgonBox';
 import ArgonTypoGraphy from 'components/ArgonTypography';
 import { Icon, Divider, IconButton, Link } from '@mui/material';
-import { setDarkMode, toggleConfig, setSideNavColor, setDarkSideNav, setFixedNavbar, setMiniSideNav, useConfig } from 'context';
+import { setDarkMode, toggleConfig, setSideNavColor, setDarkSideNav, setFixedNavbar, useConfig } from 'context';
 import ArgonButton from 'components/ArgonButton';
 import Config from './config';
 import GitHubButton from 'react-github-btn';
 import { Twitter, Facebook } from '@mui/icons-material';
 const Configrator = () => {
   const {
-    controller: { openConfig, darkMode, darkSideNav, fixedNavbar, miniSideNav },
+    controller: { openConfig, darkMode, darkSideNav, fixedNavbar },
     dispatch,
     setEnabled,
   } = useConfig();
@@ -45,7 +45,7 @@ const Configrator = () => {
 
       <ArgonBox pt={1.25} pb={3} px={3}>
         <ArgonBox>
-          <ArgonTypoGraphy variant="h6">SideNav Colors</ArgonTypoGraphy>
+          <ArgonTypoGraphy variant="h6">Sidebar Colors</ArgonTypoGraphy>
 
           <ArgonBox mb={0.5}>
             {sidenavColors.map((color, i) => (
@@ -96,9 +96,6 @@ const Configrator = () => {
         </ArgonBox>
         {/* FixedNavbar  */}
         <Config data={{ text: 'Navbar Fixed', mt: 3, checkedValue: fixedNavbar, onChange: () => setFixedNavbar(dispatch, !fixedNavbar) }} />
-
-        {/* miniSideNav  */}
-        <Config data={{ text: 'SideNav Mini', mt: 3, checkedValue: miniSideNav, onChange: () => setMiniSideNav(dispatch, !miniSideNav) }} />
 
         {/* Light / Dark mode  */}
         <Config data={{ text: 'Light / Dark', mt: 3, checkedValue: darkMode, onChange: () => setDarkMode(dispatch, { setEnabled, mode: !darkMode }) }} divider={false} />

@@ -1,9 +1,9 @@
 import React from 'react';
 import ArgonBox from 'components/ArgonBox';
-import SettingsIcon from '@mui/icons-material/Settings';
 import { toggleConfig, useConfig } from '../../context';
 import Configrator from '../../examples/configrators';
 import { Icon } from '@mui/material';
+import SideNav from 'examples/sideNav';
 export default function SideNavConfigrator() {
   const { controller, dispatch } = useConfig();
   const { openConfig } = controller;
@@ -13,7 +13,7 @@ export default function SideNavConfigrator() {
 
   return (
     <>
-      <h4>Side Nav</h4>
+      <SideNav />
       <Configrator />
       <ArgonBox
         display="flex"
